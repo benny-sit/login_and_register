@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="txt">
+    <br/>
+    <input type="text" class="txt">
+    <br/>
+    <input type="text" class="txt">
+    <button type="button" id="sbmt" onclick="submit()">submit</button>
+    <script>
+        function submit(){
+            const txt_box = document.getElementsByClassName("txt");
+            console.log(txt_box.length);
+            var out = "";
+            Array.from(txt_box).forEach((element) => {
+                if(element.value == ""){
+                    alert("Bad input");
+                    return;
+                }
+                out += element.value;
+            });
+            alert(out);
+            for(const element of txt_box){
+                alert(element.value);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="web.png" onmouseover="cnt()" />
+    <a href="#">press</a>
+    <script>
+        var cnt1 = 0
+        function cnt() {
+            cnt1++;
+            console.log(cnt1);
+        }
+        // window.addEventListener('onbeforeunload', function(event) {
+        //     event.preventDefault();
+        //     event.returnValue = '';
+        //     alert(cnt1);
+        // });
+        document.addEventListener('mouseleave', function(event) {
+            event.preventDefault();
+            event.returnValue = '';
+            alert(cnt1);
+        });
+        window.unload = function() { alert(cnt1); };
+    </script>
+</body>
+</html>
